@@ -1,5 +1,5 @@
 
-#Trivial for python
+#Trivial for python.
 def ansFunction(numberList):
     return str(sum(numberList))[:10]
 
