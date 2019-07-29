@@ -1,6 +1,6 @@
 import math
 
-#More intelligent than brute force, but still slow for large numbers
+#More intelligent than brute force, but still slow for large n
 def ansFunction(n):
     count = 1
     currentNumber = 1
@@ -11,7 +11,7 @@ def ansFunction(n):
         else:
             currentNumber = currentNumber + 2
 
-        #Only search until the sqrt of the current number, jumping by twos
+        #Only search until the sqrt of the current number, increasing by two (only odd numbers)
         for x in range(3,int(math.sqrt(currentNumber))+1,2):
             if currentNumber % x == 0:
                 break;
@@ -20,4 +20,4 @@ def ansFunction(n):
 
     return currentNumber
 
-print ansFunction(100000)
+print ansFunction(10001)

@@ -18,7 +18,7 @@ def ansFunction(n):
         prod = 1
         for num in sub:
             prod = prod * int(num)
-        print prod
+
         if prod > largestProduct:
             largestProduct = prod
 
