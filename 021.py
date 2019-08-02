@@ -4,11 +4,11 @@ import math
 def getDivisors(n):
     x = 1
     divisors = []
-    while x < math.sqrt(n):
+    while x <= math.sqrt(n):
         if n % x == 0:
             if x not in divisors:
                 divisors.append(x)
-            if n/x not in divisors and n/x != n: # We do not include n for some reason
+            if n/x not in divisors and n/x != n: # We do not include n
                 divisors.append(n/x)
         x = x + 1
     return divisors
