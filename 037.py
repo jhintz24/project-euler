@@ -1,11 +1,15 @@
 import math
 import itertools
 
+#isPrime function wasn't working for 2!!! Need to fix in other solutions. So stupid...
 #We can use the core (brute-force) logic from problem 035.
 def isPrime(n):
 
     if n <= 1: #Modification in problem 037
         return False
+
+    if n == 2: #Modification in problem 037
+        return True
 
     if n % 2 == 0: #Modification from problem 027
         return False
@@ -36,6 +40,7 @@ def is_truncatable_prime(n):
         if not isPrime(n):
             return False
         n //= 10
+
     return True
 
 print ansFunction()
