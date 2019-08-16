@@ -20,6 +20,7 @@ def isPrime(n):
     return True
 
 #Take the core logic from problem 028
+# Takes a few minutes...
 def ansFunction():
 
     primes = []
@@ -32,8 +33,9 @@ def ansFunction():
 
         if x > sideSize ** 2:
             if len(primes) > 0 and len(nonPrimes) > 0:
-                print sideSize, float(len(primes)) / float(len(nonPrimes))
-                if float(len(primes)) / float(len(nonPrimes)) < .1:
+                ratio = float(len(primes)) / float(len(primes) + len(nonPrimes))
+                print x, sideSize, ratio
+                if ratio < .1:
                     return sideSize
 
             sideSize += 2
