@@ -6,21 +6,23 @@
 #
 
 import time
+import math
 
-#Need to work on this
 def ansFunction(n):
 
+    num = 3
+    denom = 2
     count = 0
-    num = 0
-    denom = 1
+
     for x in range(n):
-        num, denom = denom, denom * 2 + num
-        if len(str(num + denom)) > len(str(denom)):
+        if int(math.log(num, 10)) > int(math.log(denom, 10)):
             count += 1
+        denom, num = num + denom, num + (2 * denom)
+
     return count
 
 
 startTime = time.time()
-print('Answer: ', ansFunction(1000))
+print('Answer: ', ansFunction(1001))
 endTime = time.time()
 print ('Time: ', endTime - startTime)
