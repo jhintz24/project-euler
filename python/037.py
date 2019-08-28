@@ -6,27 +6,46 @@
 #
 
 import time
-import itertools
 import EulerLib as lib
 
 def ansFunction():
-    ans = sum(itertools.islice(itertools.ifilter(isTruncatablePrime, itertools.count(10)), 11))
-    return ans
 
-def isTruncatablePrime(n):
+    primes = [2]
+    truncatablePrimes = []
+    x = 3
 
-    # Test if left-truncatable
-    i = 10
-    while i <= n:
-        if not lib.isPrime(n % i):
+    while True:
+        if lib.isPrime(x):
+            primes.append(x)
+
+            if isTruncatable(x, primes):
+                print(x)
+                truncatablePrimes.append(x)
+                if len(truncatablePrimes) == 11:
+                    break
+        x += 2
+
+    return sum(truncatablePrimes)
+
+def isTruncatable(n, primes):
+
+    n = str(n)
+    if len(n) == 1:
+        return False
+
+    # Check left
+    left = n
+    while len(left) > 1:
+        left = left[1:]
+        if int(left) not in primes:
             return False
-        i *= 10
 
-    # Test if right-truncatable
-    while n > 0:
-        if not lib.isPrime(n):
+    # Check right
+    right = n
+    while len(right) > 1:
+        right = right[:-1]
+        if int(right) not in primes:
             return False
-        n //= 10
 
     return True
 
