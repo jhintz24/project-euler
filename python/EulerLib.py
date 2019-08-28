@@ -98,12 +98,12 @@ def getDivisors(n):
 # Determines whether a given number is pandigital
 def isPandigital(n):
 
-    strN = str(n)
-    if len(strN) != 9:
+    n = str(n)
+    if len(n) != 9:
         return False
 
     for x in range(1, 10):
-        if strN.find(str(x)) < 0:
+        if str(x) not in n:
             return False
     else:
         return True
