@@ -1,6 +1,6 @@
 # Project Euler
 
-This repository contains my solutions for problems posted on Project Euler (www.projecteuler.net). I have made this repository public for **resume purposes only** and will soon make it private again.
+This repository contains my solutions for problems posted on Project Euler (www.projecteuler.net). I have made this repository public for **resume purposes only** and will soon make it private again. My solutions are written in Python, but I would like to rewrite some of them in a compiled language (C++/Java) to test speed improvements.
 
 ## What is Project Euler?
 Per their website:
