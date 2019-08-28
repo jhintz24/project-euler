@@ -14,6 +14,7 @@ def ansFunction():
     return ans
 
 def isTruncatablePrime(n):
+
     # Test if left-truncatable
     i = 10
     while i <= n:

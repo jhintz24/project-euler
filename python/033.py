@@ -6,24 +6,22 @@
 #
 
 import time
-import math
+import fractions
 
-#Not exactly sure how this one is solved - need to come back to it
 def ansFunction():
 
-    num = 1
-    denom = 1
-    for d in range(10, 100):
-        for n in range(10, d):
-            n0 = n % 10
-            n1 = n // 10
-            d0 = d % 10
-            d1 = d // 10
-            if (n1 == d0 and n0 * d == n * d1) or (n0 == d1 and n1 * d == n * d0):
-                num *= n
-                denom *= d
+    ans = fractions.Fraction(1, 1)
+    for a in range(1, 10):
+        for b in range(1, 10):
+            for c in range(1, 10):
+                num = int(str(a) + str(b))
+                denom = int(str(b) + str(c))
+                frac1 = fractions.Fraction(num, denom)
+                frac2 = fractions.Fraction(a, c)
 
-    return str(denom // math.gcd(num, denom))
+                if num < denom and frac1 == frac2:
+                    ans *= frac1
+    return ans
 
 
 startTime = time.time()

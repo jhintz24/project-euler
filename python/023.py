@@ -15,16 +15,21 @@ def ansFunction():
         divisors = lib.getDivisors(x)
         if sum(divisors) > x:
             abundantNumbers.append(x)
-    
-    ans = [False] * 28124
+
+    ans = [0] * 28124
     for x in range(len(abundantNumbers)):
-        for y in range(x,len(abundantNumbers)):
+        for y in range(x, len(abundantNumbers)):
             if abundantNumbers[x] + abundantNumbers[y] < 28124:
-                ans[abundantNumbers[x] + abundantNumbers[y]] = True
+                ans[abundantNumbers[x] + abundantNumbers[y]] = 1
             else:
                 break
 
-    return sum(i for (i, j) in enumerate(ans) if not j)
+    count = 0
+    for x, y in enumerate(ans):
+        if y == 0:
+            count += x
+
+    return count
 
 
 startTime = time.time()
